@@ -7,6 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Emit repository_dispatch
-        run: curl -X POST https://api.github.com/repos/sameo/loterie/dispatches
+        run: curl -X POST https://api.github.com/repos/sameo/loterie/dispatches -d '{"event_type":"eventType"}'
 
 
