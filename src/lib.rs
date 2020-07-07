@@ -1,5 +1,5 @@
 pub fn randnum() -> u8 {
-    9
+    10
 }
 
 #[cfg(test)]
