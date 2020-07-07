@@ -2,7 +2,7 @@ name: Dispatch
 on: [pull_request, create]
 
 jobs:
-  dispatch:
+  build:
     name: Repository Dispatch
     runs-on: ubuntu-latest
     steps:
