@@ -1,15 +1,16 @@
-name: Dispatch
+name: Upstream Dispatch
 on: [pull_request, create]
 
 jobs:
   build:
-    name: Repository Dispatch
+    name: Dispatch to loterie
     runs-on: ubuntu-latest
     steps:
-      - name: Dispatch to loterie
+      - name: Emit repository_dispatch
         uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ secrets.REPO_ACCESS_TOKEN }}
           repository: github.com/sameo/loterie
           event-type: hasard-pull-request
-          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}
+          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"'
+
