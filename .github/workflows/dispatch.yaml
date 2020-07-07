@@ -1,5 +1,4 @@
 name: Dispatch
-
 on: [pull_request, create]
 
 jobs:
