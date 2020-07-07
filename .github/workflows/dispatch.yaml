@@ -12,5 +12,5 @@ jobs:
           token: ${{ secrets.LOTERIE_DISPATCH_TOKEN }}
           repository: sameo/loterie
           event-type: hasard-pull-request
-          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
+          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.event.pull_request.merge_commit_sha }}"}'
 
