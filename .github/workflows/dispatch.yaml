@@ -6,7 +6,11 @@ jobs:
     name: Dispatch to loterie
     runs-on: ubuntu-latest
     steps:
-      - name: Emit repository_dispatch
-        run: curl -X POST -H 'Accept: application/vnd.github.v3+json' https://api.github.com/repos/sameo/loterie/dispatches -d '{"event_type":"eventType"}'
-
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.LOTERIE_DISPATCH_TOKEN }}
+          repository: sameo/loterie
+          event-type: hasard-pull-request
+          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
 
